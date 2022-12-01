@@ -58,3 +58,40 @@ addButton.addEventListener("click", () => {
 });
 arr = JSON.parse(localStorage.getItem("arr")) || [];
 createBook.jsBooks();
+
+document.querySelector(".conatiner-list").style.display = "block";
+document.querySelector(".container").style.display = "block";
+document.querySelector(".contact").style.display = "none";
+document.querySelector(".contact-para").style.display = "none";
+document.querySelector(".contact-list").style.display = "none";
+document.querySelector(".Book").style.display = "none";
+
+const listHide = document.querySelector("#list");
+listHide.addEventListener("click", () => {
+  document.querySelector(".conatiner-list").style.display = "block";
+  document.querySelector(".container").style.display = "block";
+  document.querySelector(".contact").style.display = "none";
+  document.querySelector(".contact-para").style.display = "none";
+  document.querySelector(".contact-list").style.display = "none";
+  document.querySelector(".Book").style.display = "none";
+});
+
+const newBook = document.querySelector("#New");
+newBook.addEventListener("click", () => {
+  document.querySelector(".Book").style.display = "block";
+  document.querySelector(".conatiner-list").style.display = "none";
+  document.querySelector(".container").style.display = "none";
+  document.querySelector(".contact").style.display = "none";
+  document.querySelector(".contact-para").style.display = "none";
+  document.querySelector(".contact-list").style.display = "none";
+});
+
+const contactBook = document.querySelector("#contact");
+contactBook.addEventListener("click", () => {
+  document.querySelector(".Book").style.display = "none";
+  document.querySelector(".conatiner-list").style.display = "none";
+  document.querySelector(".container").style.display = "none";
+  document.querySelector(".contact").style.display = "block";
+  document.querySelector(".contact-para").style.display = "block";
+  document.querySelector(".contact-list").style.display = "block";
+});

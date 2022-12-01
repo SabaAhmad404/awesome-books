@@ -1,3 +1,12 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  height: 100vh;
+  justify-content: space-between;
+}
+
 h1 {
   justify-content: center;
   align-items: center;
@@ -33,8 +42,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  width: 20em;
-  height: 100%;
+  width: 20rem;
 }
 
 .inner:nth-child(odd) {
@@ -44,7 +52,6 @@ h1 {
 .container {
   border: 1px solid black;
   width: 20em;
-  height: 100%;
   margin: 10px auto;
 }
 
@@ -55,4 +62,63 @@ h1 {
   width: 6em;
   box-shadow: 1px 2px;
   cursor: pointer;
+}
+
+.list-elements {
+  list-style: none;
+  display: flex;
+  list-style-type: none;
+  padding-top: 8px;
+  padding-right: 8%;
+  gap: 16px;
+}
+
+.list-elements li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid black;
+}
+
+h2 {
+  padding-left: 4rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
+.contact-para {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.contact-list {
+  align-self: center;
+  justify-content: center;
+}
+
+.foot {
+  border: 3px solid black;
+}
+
+h3 {
+  padding-left: 3rem;
+}
+
+.timer {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  font-family: sans-serif;
 }
