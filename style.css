@@ -1,10 +1,19 @@
-h1{
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+h1 {
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
-.titles{
+.titles {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,14 +21,15 @@ h1{
   margin: 0 auto;
 }
 
-#author{
+#author {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 10px auto;
 }
-#Add{
+
+#Add {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,10 +37,88 @@ h1{
   margin: 0 auto;
 }
 
-.conatiner{
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 20rem;
+}
+
+.inner:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.container {
+  border: 1px solid black;
+  width: 20em;
+  margin: 10px auto;
+}
+
+.delete {
+  background-color: white;
+  padding: 0.2em;
+  margin-right: 0.3em;
+  width: 6em;
+  box-shadow: 1px 2px;
+  cursor: pointer;
+}
+
+.list-elements {
+  list-style: none;
+  display: flex;
+  list-style-type: none;
+  padding-top: 8px;
+  padding-right: 8%;
+  gap: 16px;
+}
+
+.list-elements li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid black;
+}
+
+h2 {
+  padding-left: 4rem;
+}
+
+.contact {
   display: flex;
   flex-direction: column;
+  align-self: center;
   justify-content: center;
-  align-items: center;
-  margin: 10% 10%;
+}
+
+.contact-para {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.contact-list {
+  align-self: center;
+  justify-content: center;
+}
+
+.foot {
+  border: 3px solid black;
+}
+
+h3 {
+  padding-left: 3rem;
+}
+
+.timer {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  font-family: sans-serif;
 }
