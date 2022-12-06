@@ -1,59 +1,59 @@
-let arr = [];
+import jsBooks from './modules/addAddRemove.js';
+import getDate from './modules/dateandtime.js';
 
-const books = document.querySelector('.container');
+let arr = [];
 const arrCollection = () => {
   const titleOfBook = document.querySelector('#Texts').value;
   const authorOfBook = document.querySelector('#author').value;
   const id = arr.length;
   arr.push({ titleOfBook, authorOfBook, id });
 };
-
-const storage = () => {
-  localStorage.setItem('arr', JSON.stringify(arr));
-};
-
 const addButton = document.querySelector('#Add');
 addButton.addEventListener('click', () => {
   arrCollection();
-  storage();
+  localStorage.setItem('arr', JSON.stringify(arr));
   window.location.reload();
 });
 arr = JSON.parse(localStorage.getItem('arr')) || [];
-
-const jsBooks = () => {
-  for (let i = 0; i < arr.length; i += 1) {
-    const booksOfDiv = document.createElement('div');
-    books.append(booksOfDiv);
-    const paras = document.createElement('p');
-    booksOfDiv.append(paras);
-    const authorPara = document.createElement('p');
-    booksOfDiv.append(authorPara);
-    paras.innerText = arr[i].titleOfBook;
-    authorPara.innerText = arr[i].authorOfBook;
-    const removeButton = document.createElement('button');
-    removeButton.innerText = 'Remove';
-    booksOfDiv.append(removeButton);
-    removeButton.id = arr[i].id;
-    const lineBreak = document.createElement('hr');
-    booksOfDiv.append(lineBreak);
-    /* eslint-disable */
-    const deletBooks = () => {
-      const target = removeButton.id;
-      arr.splice(target, 1);
-      let newid = 0;
-      if (arr.length > 0) {
-        arr.forEach((e) => {
-          e.id = newid;
-          newid += 1;
-        });
-      }
-    };
-    removeButton.addEventListener("click", () => {
-      arr = JSON.parse(localStorage.getItem("arr")) || [];
-      deletBooks();
-      storage();
-      window.location.reload();
-    });
-  }
-};
 jsBooks();
+const bookDisplay = () => {
+  document.querySelector('.conatiner-list').style.display = 'block';
+  document.querySelector('.container').style.display = 'block';
+  document.querySelector('.contact').style.display = 'none';
+  document.querySelector('.contact-para').style.display = 'none';
+  document.querySelector('.contact-list').style.display = 'none';
+  document.querySelector('.Book').style.display = 'none';
+};
+bookDisplay();
+
+const listHide = document.querySelector('#list');
+listHide.addEventListener('click', () => {
+  document.querySelector('.conatiner-list').style.display = 'block';
+  document.querySelector('.container').style.display = 'block';
+  document.querySelector('.contact').style.display = 'none';
+  document.querySelector('.contact-para').style.display = 'none';
+  document.querySelector('.contact-list').style.display = 'none';
+  document.querySelector('.Book').style.display = 'none';
+});
+
+const newBook = document.querySelector('#New');
+newBook.addEventListener('click', () => {
+  document.querySelector('.Book').style.display = 'block';
+  document.querySelector('.conatiner-list').style.display = 'none';
+  document.querySelector('.container').style.display = 'none';
+  document.querySelector('.contact').style.display = 'none';
+  document.querySelector('.contact-para').style.display = 'none';
+  document.querySelector('.contact-list').style.display = 'none';
+});
+
+const contactBook = document.querySelector('#contact');
+contactBook.addEventListener('click', () => {
+  document.querySelector('.Book').style.display = 'none';
+  document.querySelector('.conatiner-list').style.display = 'none';
+  document.querySelector('.container').style.display = 'none';
+  document.querySelector('.contact').style.display = 'block';
+  document.querySelector('.contact-para').style.display = 'block';
+  document.querySelector('.contact-list').style.display = 'block';
+});
+
+getDate();
